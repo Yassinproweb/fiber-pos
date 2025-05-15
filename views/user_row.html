@@ -1,4 +1,6 @@
-<div class="p-2 border-posblue100">
-  <button class="ml-2 text-red-600" hx-delete="/users/${user.Name}" hx-target="closest div"
-    hx-swap="outerHTML"></button>
+<div class="p-2">
+  <strong class="text-cs_color">{{ .Name }} - {{ .Email }}</strong>
+  <button class="ml-2 text-cs_white bg-ord_dnd rounded-md p-3" hx-delete="/users/{{ .Name }}" hx-target="closest div"
+    hx-swap="outerHTML">Delete
+    User</button>
 </div>

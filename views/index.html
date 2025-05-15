@@ -5,17 +5,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Point Of Sale</title>
-  <link href="../static/css/style.css" rel="stylesheet">
-  <script src="../static/js/alpine.min.js" defer></script>
-  <script src="../static/js/htmx.min.js" defer></script>
+  <link href="/static/css/style.css" rel="stylesheet">
+  <script src="/static/js/alpine.min.js" defer></script>
+  <script src="/static/js/htmx.min.js" defer></script>
 </head>
 
 <body>
-  <h1 class="text-2xl text-posblue100 font-bold"></h1>
+  <h1 class="text-2xl text-cs_color font-bold">POS Dashboard Test</h1>
+
+  <form hx-post="/users" hx-target="#users" hx-swap="beforeend" class="mb-3 space-y-2">
+    <input type="text" name="name" placeholder="Enter name" class="border px-5 py-3 rounded-md">
+    <input type="email" name="email" placeholder="Enter email" class="border px-5 py-3 rounded-md">
+    <button type="submit" class="p-3 text-cs_white px-5 py-3 rounded-md bg-ord_plc">Add User</button>
+  </form>
 
   <div id="users">
-    {{ range .Users }}
-    {{ template "user_row.html" . }}
+    {{ range .users }}
+    {{ template "user_row" }}
     {{ end }}
   </div>
 

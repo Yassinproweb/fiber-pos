@@ -6,16 +6,17 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cs_color: 'hsl(187, 41%, 43%)',
-        cs_white: 'hsl(187, 1%, 100%)',
-        cs_black: 'hsl(187, 1%, 07%)',
-        ord_plc: 'hsl(217, 81%, 57%)', //blue
-        ord_pdg: 'hsl(267, 81%, 53%)', //purple
-        ord_cld: 'hsl(217, 7%, 71%)', //gray
-        ord_rdy: 'hsl(37, 87%, 53%)', //orange
-        ord_trs: 'hsl(53, 87%, 53%)', //yellow
-        ord_dlv: 'hsl(147, 81%, 37%)', //green
-        ord_dnd: 'hsl(1, 81%, 47%)', //red
+        cs_color: 'hsl(197, 75%, 45%)',
+        cs_white: 'hsl(197, 1%, 100%)',
+        cs_light: 'hsl(197, 1%, 63%)',
+        cs_black: 'hsl(197, 1%, 07%)',
+
+        ord_plc: 'hsl(213, 91%, 57%)',
+        ord_cld: 'hsl(1, 95%, 53%)',
+        ord_trs: 'hsl(81, 93%, 47%)',
+        ord_dlv: 'hsl(141, 81%, 37%)',
+        ord_pdg: 'hsl(267, 81%, 57%)',
+        ord_rdy: 'hsl(51, 93%, 45%)',
       }
     },
   },

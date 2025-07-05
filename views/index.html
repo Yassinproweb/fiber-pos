@@ -13,27 +13,28 @@
 <body>
   <h1 class="text-2xl text-cs_color font-bold">POS Dashboard Test</h1>
 
-  <form hx-post="/users" hx-target="#users" hx-swap="beforeend" class="mb-3 space-y-2">
+  <form hx-post="/orders" hx-target="#orders" hx-swap="beforeend" class="mb-3 space-y-2">
     <input type="text" name="name" placeholder="Enter name" class="border px-5 py-3 rounded-md">
-    <input type="email" name="email" placeholder="Enter email" class="border px-5 py-3 rounded-md">
-    <button type="submit" class="p-3 text-cs_white px-5 py-3 rounded-md bg-ord_rdy">Add User</button>
-    <button class="p-3 text-cs_white px-5 py-3 rounded-md bg-ord_pdg">Add User</button>
-    <button class="p-3 text-cs_white px-5 py-3 rounded-md bg-ord_cld">Add User</button>
-    <button class="p-3 text-cs_white px-5 py-3 rounded-md bg-ord_trs">Add User</button>
-    <button class="p-3.5 text-cs_white px-5 py-3 rounded-md bg-ord_plc">Add User</button>
+    <select name="type" id="type" class="border px-5 py-3 rounded-md">
+      <option value="Takeaway">Takeaway</option>
+      <option value="DineIn" selected>DineIn</option>
+      <option value="Delivery">Delivery</option>
+    </select>
+    <select name="status" id="status" class="border px-5 py-3 rounded-md">
+      <option value="Placed" selected>Placed</option>
+      <option value="Pending">Pending</option>
+      <option value="Canceled">Canceled</option>
+      <option value="Ready">Ready</option>
+      <option value="Delivered">Delivered</option>
+      <option value="Taken">Taken</option>
+      <option value="Served">Served</option>
+    </select>
+    <input type="number" name="items" placeholder="Enter number of items" class="border px-5 py-3 rounded-md">
+    <input type="text" name="cost" placeholder="Enter total cost" class="border px-5 py-3 rounded-md">
+    <button type="submit" class="p-3.5 text-cs_white px-5 py-3 rounded-md bg-cs_color">Add Order</button>
   </form>
 
-  <div id="users">
-    {{ range .users }}
-    <div class="p-2">
-      <strong class="text-cs_color">{{ .Name }} - {{ .Email }}</strong>
-      <button class="ml-2 text-cs_white bg-ord_dnd rounded-md p-3" hx-delete="/users/{{ .Name }}"
-        hx-target="closest div" hx-swap="outerHTML">Delete
-        User</button>
-    </div>
-    {{ end }}
-  </div>
-
+  {{ template "order_row" . }}
 </body>
 
 </html>

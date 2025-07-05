@@ -1,35 +1,9 @@
-<div class="w-full mx-auto bg-white p-4 rounded shadow">
-  <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
-    class="mb-4 w-full p-2 border border-cs_black/25 rounded outline-none">
-
-  <div>
-    <h2 class="text-cs_black text-3xl font-bold">Orders List</h2>
-
-    <div class="overflow-x-auto">
-      <table id="orders" class="min-w-full divide-y divide-cs_black">
-        <thead class="bg-cs_black">
-          <tr class="text-xl text-cs_white font-bold">
-            <th class="px-4 py-2 text-left cursor-pointer">Name</th>
-            <th class="px-4 py-2 text-left cursor-pointer">Type</th>
-            <th class="px-4 py-2 text-left cursor-pointer">Status</th>
-            <th class="px-4 py-2 text-left cursor-pointer">Capacity</th>
-            <th class="px-4 py-2 text-left cursor-pointer">Total Amount</th>
-          </tr>
-        </thead>
-        <tbody class="divide-y divide-gray-200">
-          {{ range .orders }}
-          <tr>
-            <td class="px-4 py-2 text-left text-base text-cs_black font-normal" class="px-4 py-2">{{ .Name }}</td>
-            <td class="px-4 py-2 text-left text-base text-ord_rdy font-normal uppercase" class="px-4 py-2">{{ .Type }}
-            </td>
-            <td class="px-4 py-2 text-left text-base text-ord_dlv font-medium uppercase" class="px-4 py-2">{{ .Status }}
-            </td>
-            <td class="px-4 py-2 text-left text-base text-ord_plc font-normal" class="px-4 py-2">{{ .Items }}</td>
-            <td class="px-4 py-2 text-left text-base text-ord_dnd font-bold" class="px-4 py-2">{{ .Cost }}</td>
-          </tr>
-          {{ end }}
-        </tbody>
-      </table>
-    </div>
-  </div>
-</div>
+<tr>
+  <td class="px-4 py-2 text-left text-base text-cs_black font-normal" class="px-4 py-2">{{ .Name }}</td>
+  <td class="px-4 py-2 text-left text-base text-ord_rdy font-normal uppercase" class="px-4 py-2">{{ .Type }}
+  </td>
+  <td class="px-4 py-2 text-left text-base text-ord_dlv font-medium uppercase" class="px-4 py-2">{{ .Status }}
+  </td>
+  <td class="px-4 py-2 text-left text-base text-ord_plc font-normal" class="px-4 py-2">{{ .Items }}</td>
+  <td class="px-4 py-2 text-left text-base text-ord_dnd font-bold" class="px-4 py-2">{{ .Cost }}</td>
+</tr>

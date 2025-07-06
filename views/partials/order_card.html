@@ -1,0 +1,28 @@
+<div
+  class="snap-center w-64 aspect-[16/12] flex-col items-center justify-start gap-2.5 border-2 border-pos_lgh/15 rounded-[inherit]">
+  <div class="w-full h-fit items-center justify-between p-2 border-b-2 border-b-pos_bla/10">
+    <div class="w-fit flex-col gap-0 items-start justify-center">
+      <h4 class="text-sm text-pos_bla font-bold">{{ .CustName }} - {{ .CustNumber}}</h4>
+      <p class="text-sm text-pos_rdy font-black">{{ .Name }} - {{ .Type }}</p>
+    </div>
+    <div class="w-fit items-center justify-end">
+      <span class="text-pos_whi text-2xl w-12 aspect-square flex items-center justify-center rounded-full bg-pos_rdy">
+        <i class="ph ph-person-simple-bike"></i>
+      </span>
+    </div>
+  </div>
+  <div class="w-full flex-col items-start justify-center gap-1.5 p-2.5 font-medium">
+    <span class="w-full flex items-center justify-start gap-2">
+      <i class="ph ph-map-pin-area text-xl text-pos_rdy leading-none"></i>
+      <span class="text-[13px] text-pos_bla font-medium">{{ .Destination }} - {{ .Status }}</span>
+    </span>
+    <span class="w-full flex items-center justify-start gap-2">
+      <i class="ph ph-notepad text-xl text-pos_rdy leading-none"></i>
+      <span class="text-[13px] text-pos_bla font-medium">Items: {{ .Items }} - Total Price: ${{ .Cost }}</span>
+    </span>
+    <span class="w-full flex items-center justify-start gap-2">
+      <i class="ph ph-clock-afternoon text-xl text-pos_rdy leading-none"></i>
+      <span class="text-[13px] text-pos_bla font-medium">{{ .DateTime }}</span>
+    </span>
+  </div>
+</div>

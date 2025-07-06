@@ -633,7 +633,12 @@ video {
 
 .divide-cs_black > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
-  border-color: hsl(187 1% 07% / var(--tw-divide-opacity, 1));
+  border-color: hsl(207 1% 07% / var(--tw-divide-opacity, 1));
+}
+
+.divide-cs_color > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: hsl(207 89% 45% / var(--tw-divide-opacity, 1));
 }
 
 .divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
@@ -662,22 +667,17 @@ video {
 }
 
 .border-cs_black\/25 {
-  border-color: hsl(187 1% 07% / 0.25);
+  border-color: hsl(207 1% 07% / 0.25);
 }
 
 .bg-cs_black {
   --tw-bg-opacity: 1;
-  background-color: hsl(187 1% 07% / var(--tw-bg-opacity, 1));
+  background-color: hsl(207 1% 07% / var(--tw-bg-opacity, 1));
 }
 
 .bg-cs_color {
   --tw-bg-opacity: 1;
-  background-color: hsl(187 71% 43% / var(--tw-bg-opacity, 1));
-}
-
-.bg-ord_dnd {
-  --tw-bg-opacity: 1;
-  background-color: hsl(1 81% 47% / var(--tw-bg-opacity, 1));
+  background-color: hsl(207 89% 45% / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -763,37 +763,32 @@ video {
 
 .text-cs_black {
   --tw-text-opacity: 1;
-  color: hsl(187 1% 07% / var(--tw-text-opacity, 1));
+  color: hsl(207 1% 07% / var(--tw-text-opacity, 1));
 }
 
 .text-cs_color {
   --tw-text-opacity: 1;
-  color: hsl(187 71% 43% / var(--tw-text-opacity, 1));
+  color: hsl(207 89% 45% / var(--tw-text-opacity, 1));
 }
 
 .text-cs_white {
   --tw-text-opacity: 1;
-  color: hsl(187 1% 100% / var(--tw-text-opacity, 1));
+  color: hsl(207 1% 100% / var(--tw-text-opacity, 1));
 }
 
 .text-ord_dlv {
   --tw-text-opacity: 1;
-  color: hsl(147 81% 37% / var(--tw-text-opacity, 1));
-}
-
-.text-ord_dnd {
-  --tw-text-opacity: 1;
-  color: hsl(1 81% 47% / var(--tw-text-opacity, 1));
+  color: hsl(141 81% 37% / var(--tw-text-opacity, 1));
 }
 
 .text-ord_plc {
   --tw-text-opacity: 1;
-  color: hsl(217 81% 57% / var(--tw-text-opacity, 1));
+  color: hsl(213 91% 57% / var(--tw-text-opacity, 1));
 }
 
 .text-ord_rdy {
   --tw-text-opacity: 1;
-  color: hsl(37 87% 53% / var(--tw-text-opacity, 1));
+  color: hsl(51 93% 45% / var(--tw-text-opacity, 1));
 }
 
 .shadow {

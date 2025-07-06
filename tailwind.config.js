@@ -6,10 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        cs_color: 'hsl(197, 75%, 45%)',
-        cs_white: 'hsl(197, 1%, 100%)',
-        cs_light: 'hsl(197, 1%, 63%)',
-        cs_black: 'hsl(197, 1%, 07%)',
+        cs_color: 'hsl(207, 89%, 45%)',
+        cs_white: 'hsl(207, 1%, 100%)',
+        cs_light: 'hsl(207, 1%, 63%)',
+        cs_black: 'hsl(207, 1%, 07%)',
 
         ord_plc: 'hsl(213, 91%, 57%)',
         ord_cld: 'hsl(1, 95%, 53%)',
@@ -22,4 +22,3 @@ module.exports = {
   },
   plugins: [],
 }
-

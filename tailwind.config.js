@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        pos_col: 'hsl(71, 31%, 45%)',
+        pos_col: 'hsl(75, 29%, 39%)',
         pos_whi: 'hsl(205, 1%, 100%)',
         pos_lgh: 'hsl(205, 1%, 63%)',
         pos_bla: 'hsl(205, 1%, 07%)',

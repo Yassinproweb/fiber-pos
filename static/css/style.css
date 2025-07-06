@@ -643,7 +643,7 @@ video {
 
 .divide-pos_col > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
-  border-color: hsl(77 21% 35% / var(--tw-divide-opacity, 1));
+  border-color: hsl(75 29% 39% / var(--tw-divide-opacity, 1));
 }
 
 .overflow-x-auto {
@@ -677,7 +677,7 @@ video {
 
 .bg-pos_col {
   --tw-bg-opacity: 1;
-  background-color: hsl(77 21% 35% / var(--tw-bg-opacity, 1));
+  background-color: hsl(75 29% 39% / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -777,7 +777,7 @@ video {
 
 .text-pos_col {
   --tw-text-opacity: 1;
-  color: hsl(77 21% 35% / var(--tw-text-opacity, 1));
+  color: hsl(75 29% 39% / var(--tw-text-opacity, 1));
 }
 
 .text-pos_dlv {

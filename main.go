@@ -19,11 +19,11 @@ func main() {
 
 	router.Get("/", func(c *fiber.Ctx) error {
 		orders := models.FetchOrders()
-		tables := models.FetchTables()
+		// tables := models.FetchTables()
 
 		return c.Render("index", fiber.Map{
 			"orders": orders,
-			"tables": tables,
+			// "tables": tables,
 		})
 	})
 
@@ -33,22 +33,34 @@ func main() {
 		orderStatus := models.Status(c.FormValue("status"))
 		orderItems := c.FormValue("items")
 		orderCost := c.FormValue("cost")
+		custName := c.FormValue("cust-name")
+		custNumber := c.FormValue("cust-number")
+		destination := c.FormValue("destination")
+		datetime := c.FormValue("datetime")
 
 		order := models.Order{
-			Name:   orderName,
-			Type:   orderType,
-			Status: orderStatus,
-			Items:  orderItems,
-			Cost:   orderCost,
+			Name:        orderName,
+			Type:        orderType,
+			Status:      orderStatus,
+			Items:       orderItems,
+			Cost:        orderCost,
+			CustName:    custName,
+			CustNumber:  custNumber,
+			Destination: destination,
+			DateTime:    datetime,
 		}
 
 		fmt.Println(order)
-		return c.Render("order_row", fiber.Map{
-			"Name":   orderName,
-			"Type":   orderType,
-			"Status": orderStatus,
-			"Items":  orderItems,
-			"Cost":   orderCost,
+		return c.Render("partials/order_card", fiber.Map{
+			"Name":        orderName,
+			"Type":        orderType,
+			"Status":      orderStatus,
+			"Items":       orderItems,
+			"Cost":        orderCost,
+			"CustName":    custName,
+			"CustNumber":  custNumber,
+			"Destination": destination,
+			"DateTime":    datetime,
 		})
 	})
 
@@ -72,5 +84,5 @@ func main() {
 	})
 
 	fmt.Println("Server is running on port 5174")
-	router.Listen(":5174")
+	router.Listen(":5177")
 }

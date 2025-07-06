@@ -24,7 +24,8 @@
     <div class="w-full flex flex-col gap-5">
       <form hx-post="/orders" hx-target="#orders" hx-swap="beforeend"
         class="mb-3 space-y-2 flex gap-2.5 items-center justify-between flex-nowrap">
-        <input type="text" name="order-name" placeholder="Enter order name" class="border px-5 py-3 rounded-md">
+        <input type="text" name="order-name" placeholder="Enter order name" class="border px-5 py-3 rounded-md"
+          required>
         <select name="type" id="type" class="border px-5 py-3 rounded-md">
           <option value="Takeaway">Takeaway</option>
           <option value="DineIn" selected>DineIn</option>
@@ -39,8 +40,9 @@
           <option value="Taken">Taken</option>
           <option value="Served">Served</option>
         </select>
-        <input type="number" name="items" placeholder="Enter number of items" class="border px-5 py-3 rounded-md">
-        <input type="text" name="cost" placeholder="Enter total cost" class="border px-5 py-3 rounded-md">
+        <input type="number" name="items" placeholder="Enter number of items" class="border px-5 py-3 rounded-md"
+          required>
+        <input type="text" name="cost" placeholder="Enter total cost" class="border px-5 py-3 rounded-md" required>
         <button type="submit" class="p-3.5 text-cs_white px-5 py-3 rounded-md bg-cs_color">Add&nbsp;Order</button>
       </form>
 
@@ -76,13 +78,15 @@
     <div class="w-full flex flex-col gap-5">
       <form hx-post="/tables" hx-target="#tables" hx-swap="beforeend"
         class="mb-3 space-y-2 flex gap-2.5 items-center justify-between flex-nowrap">
-        <input type="text" name="table-name" placeholder="Enter table name" class="border px-5 py-3 rounded-md">
+        <input type="text" name="table-name" placeholder="Enter table name" class="border px-5 py-3 rounded-md"
+          required>
         <select name="state" id="state" class="border px-5 py-3 rounded-md">
           <option value="Available">Available</option>
           <option value="Occupied" selected>Occupied</option>
           <option value="Pending">Pending</option>
         </select>
-        <input type="number" name="capacity" placeholder="Enter number of seats" class="border px-5 py-3 rounded-md">
+        <input type="number" name="capacity" placeholder="Enter number of seats" class="border px-5 py-3 rounded-md"
+          required>
         <button type="submit" class="p-3.5 text-cs_white px-5 py-3 rounded-md bg-cs_color">Add&nbsp;Table</button>
       </form>
 

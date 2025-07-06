@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <h1 class="text-2xl text-cs_color font-bold">POS Dashboard Test</h1>
+  <h1 class="text-2xl text-pos_col font-bold">POS Dashboard Test</h1>
 
   <div class="w-full flex flex-col gap-12">
     <div class="w-full flex flex-col gap-5">
@@ -43,20 +43,20 @@
         <input type="number" name="items" placeholder="Enter number of items" class="border px-5 py-3 rounded-md"
           required>
         <input type="text" name="cost" placeholder="Enter total cost" class="border px-5 py-3 rounded-md" required>
-        <button type="submit" class="p-3.5 text-cs_white px-5 py-3 rounded-md bg-cs_color">Add&nbsp;Order</button>
+        <button type="submit" class="p-3.5 text-pos_whi px-5 py-3 rounded-md bg-pos_col">Add&nbsp;Order</button>
       </form>
 
       <div class="w-full flex-col mx-auto bg-white p-4 rounded shadow">
         <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
-          class="mb-4 w-full p-2 border border-cs_black/25 rounded outline-none">
+          class="mb-4 w-full p-2 border border-pos_bla/25 rounded outline-none">
 
         <div class="flex flex-col gap-0.5">
-          <h2 class="text-cs_black text-3xl font-bold">Orders List</h2>
+          <h2 class="text-pos_bla text-3xl font-bold">Orders List</h2>
 
           <div class="overflow-x-auto">
-            <table class="w-full divide-y divide-cs_black rounded-3xl">
-              <thead class="bg-cs_black">
-                <tr class="text-xl text-cs_white font-bold">
+            <table class="w-full divide-y divide-pos_bla rounded-3xl">
+              <thead class="bg-pos_bla">
+                <tr class="text-xl text-pos_whi font-bold">
                   <th class="px-4 py-2 text-left cursor-pointer">Name</th>
                   <th class="px-4 py-2 text-left cursor-pointer">Type</th>
                   <th class="px-4 py-2 text-left cursor-pointer">Status</th>
@@ -87,20 +87,20 @@
         </select>
         <input type="number" name="capacity" placeholder="Enter number of seats" class="border px-5 py-3 rounded-md"
           required>
-        <button type="submit" class="p-3.5 text-cs_white px-5 py-3 rounded-md bg-cs_color">Add&nbsp;Table</button>
+        <button type="submit" class="p-3.5 text-pos_whi px-5 py-3 rounded-md bg-pos_col">Add&nbsp;Table</button>
       </form>
 
       <div class="w-full flex-col mx-auto bg-white p-4 rounded shadow">
         <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
-          class="mb-4 w-full p-2 border border-cs_black/25 rounded outline-none">
+          class="mb-4 w-full p-2 border border-pos_bla/25 rounded outline-none">
 
         <div class="flex flex-col gap-0.5">
-          <h2 class="text-cs_color text-3xl font-bold">Tables List</h2>
+          <h2 class="text-pos_col text-3xl font-bold">Tables List</h2>
 
           <div class="overflow-x-auto">
-            <table class="w-full divide-y divide-cs_color rounded-3xl">
-              <thead class="bg-cs_color">
-                <tr class="text-xl text-cs_white font-bold">
+            <table class="w-full divide-y divide-pos_col rounded-3xl">
+              <thead class="bg-pos_col">
+                <tr class="text-xl text-pos_whi font-bold">
                   <th class="px-4 py-2 text-left cursor-pointer">Name</th>
                   <th class="px-4 py-2 text-left cursor-pointer">Capacity</th>
                   <th class="px-4 py-2 text-left cursor-pointer">State</th>

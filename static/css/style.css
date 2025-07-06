@@ -631,14 +631,19 @@ video {
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
 
-.divide-cs_black > :not([hidden]) ~ :not([hidden]) {
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-divide-opacity, 1));
+}
+
+.divide-pos_bla > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
   border-color: hsl(205 1% 07% / var(--tw-divide-opacity, 1));
 }
 
-.divide-gray-200 > :not([hidden]) ~ :not([hidden]) {
+.divide-pos_col > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-divide-opacity, 1));
+  border-color: hsl(77 21% 35% / var(--tw-divide-opacity, 1));
 }
 
 .overflow-x-auto {
@@ -661,13 +666,18 @@ video {
   border-width: 1px;
 }
 
-.border-cs_black\/25 {
+.border-pos_bla\/25 {
   border-color: hsl(205 1% 07% / 0.25);
 }
 
-.bg-cs_black {
+.bg-pos_bla {
   --tw-bg-opacity: 1;
   background-color: hsl(205 1% 07% / var(--tw-bg-opacity, 1));
+}
+
+.bg-pos_col {
+  --tw-bg-opacity: 1;
+  background-color: hsl(77 21% 35% / var(--tw-bg-opacity, 1));
 }
 
 .bg-white {
@@ -747,38 +757,47 @@ video {
   font-weight: 400;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
-.text-cs_black {
+.text-pos_bla {
   --tw-text-opacity: 1;
   color: hsl(205 1% 07% / var(--tw-text-opacity, 1));
 }
 
-.text-cs_white {
-  --tw-text-opacity: 1;
-  color: hsl(205 1% 100% / var(--tw-text-opacity, 1));
-}
-
-.text-ord_cld {
+.text-pos_cld {
   --tw-text-opacity: 1;
   color: hsl(357 95% 50% / var(--tw-text-opacity, 1));
 }
 
-.text-ord_dlv {
+.text-pos_col {
+  --tw-text-opacity: 1;
+  color: hsl(77 21% 35% / var(--tw-text-opacity, 1));
+}
+
+.text-pos_dlv {
   --tw-text-opacity: 1;
   color: hsl(141 89% 43% / var(--tw-text-opacity, 1));
 }
 
-.text-ord_plc {
+.text-pos_plc {
   --tw-text-opacity: 1;
   color: hsl(217 99% 56% / var(--tw-text-opacity, 1));
 }
 
-.text-ord_rdy {
+.text-pos_rdy {
   --tw-text-opacity: 1;
   color: hsl(51 93% 45% / var(--tw-text-opacity, 1));
+}
+
+.text-pos_whi {
+  --tw-text-opacity: 1;
+  color: hsl(205 1% 100% / var(--tw-text-opacity, 1));
 }
 
 .shadow {

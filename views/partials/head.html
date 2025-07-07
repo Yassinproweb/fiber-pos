@@ -34,20 +34,20 @@
             <h3 class="text-xl text-pos_whi font-black">Main Menu</h3>
             <div class="w-full flex-col items-start justify-start gap-2 pl-2.5">
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65">
-                <i class="ph ph-dashboard-square-01 text-xl"></i>
+                <i class="ph ph-presentation text-xl"></i>
                 <span>Dashboard</span>
               </button>
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65"
-                hx-get="/api/orders" hx-trigger="click" hx-target="html" hx-swap="outerHtml">
-                <i class="ph ph-edit-table text-xl"></i>
+                hx-get="/orders" hx-trigger="click" hx-target="html" hx-swap="outerHtml">
+                <i class="ph ph-book-open-text text-xl"></i>
                 <span>Orders</span>
               </button>
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65">
-                <i class="ph ph-dining-table text-xl"></i>
+                <i class="ph ph- text-xl"></i>
                 <span>Tables</span>
               </button>
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65">
-                <i class="ph ph-user-multiple-02 text-xl"></i>
+                <i class="ph ph-bookmarks text-xl"></i>
                 <span>Waitlist</span>
               </button>
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65">
@@ -60,11 +60,11 @@
             <h3 class="text-xl text-pos_whi font-semibold">Company</h3>
             <div class="w-full flex-col items-start justify-start gap-2 pl-2.5">
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65">
-                <i class="ph ph-presentation-bar-chart-01 text-xl"></i>
+                <i class="ph ph-projector-screen-chart text-xl"></i>
                 <span>Analytics</span>
               </button>
               <button class="w-full flex items-end justify-start gap-2 text-base text-pos_whi hover:opacity-65">
-                <i class="ph ph-store-02 text-xl"></i>
+                <i class="ph ph-storefront text-xl"></i>
                 <span>Manage</span>
               </button>
             </div>
@@ -72,11 +72,3 @@
         </nav>
       </div>
     </header>
-
-    <menu
-      class="absolute w-[60%] h-[4.5rem] px-7 py-3.5 items-center justify-between top-0 right-[25%] border-b-2 border-b-pos_lgh/25 bg-pos_whi">
-      <div class="w-fit flex-col items-start justify-center gap-0">
-        <h3 class="text-xl text-pos_bla font-bold leading-none">Cashier's Name</h3>
-        <p class="text-pos_bla">Person's title @Login</p>
-      </div>
-    </menu>

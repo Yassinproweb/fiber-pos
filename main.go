@@ -29,6 +29,14 @@ func main() {
 		})
 	})
 
+	router.Get("/orders", func(c *fiber.Ctx) error {
+		orders := models.FetchOrders()
+
+		return c.Render("orders", fiber.Map{
+			"orders": orders,
+		})
+	})
+
 	router.Post("/orders", func(c *fiber.Ctx) error {
 		orderName := c.FormValue("order-name")
 		orderType := models.Type(c.FormValue("type"))

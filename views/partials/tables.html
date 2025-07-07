@@ -1,95 +1,41 @@
-<div class="w-full flex flex-col gap-12">
-  <div class="w-full flex flex-col gap-5">
-    <form hx-post="/orders" hx-target="#orders" hx-swap="beforeend"
-      class="mb-3 space-y-2 flex gap-2.5 items-center justify-between flex-nowrap">
-      <input type="text" name="order-name" placeholder="Enter order name" class="border px-5 py-3 rounded-md" required>
-      <select name="type" id="type" class="border px-5 py-3 rounded-md">
-        <option value="Takeaway">Takeaway</option>
-        <option value="DineIn" selected>DineIn</option>
-        <option value="Delivery">Delivery</option>
-      </select>
-      <select name="status" id="status" class="border px-5 py-3 rounded-md">
-        <option value="Placed" selected>Placed</option>
-        <option value="Preparing">Preparing</option>
-        <option value="Canceled">Canceled</option>
-        <option value="Ready">Ready</option>
-        <option value="Delivered">Delivered</option>
-        <option value="Taken">Taken</option>
-        <option value="Served">Served</option>
-      </select>
-      <input type="number" name="items" placeholder="Enter number of items" class="border px-5 py-3 rounded-md"
-        required>
-      <input type="text" name="cost" placeholder="Enter total cost" class="border px-5 py-3 rounded-md" required>
-      <button type="submit" class="p-3.5 text-pos_whi px-5 py-3 rounded-md bg-pos_col">Add&nbsp;Order</button>
-    </form>
+<div class="w-full flex flex-col gap-5">
+  <form hx-post="/tables" hx-target="#tables" hx-swap="beforeend"
+    class="mb-3 space-y-2 flex gap-2.5 items-center justify-between flex-nowrap">
+    <input type="text" name="table-name" placeholder="Enter table name" class="border px-5 py-3 rounded-md" required>
+    <select name="state" id="state" class="border px-5 py-3 rounded-md">
+      <option value="Available">Available</option>
+      <option value="Occupied" selected>Occupied</option>
+      <option value="Pending">Pending</option>
+    </select>
+    <input type="number" name="capacity" placeholder="Enter number of seats" class="border px-5 py-3 rounded-md"
+      required>
+    <button type="submit" class="p-3.5 text-pos_whi px-5 py-3 rounded-md bg-pos_col">Add&nbsp;Table</button>
+  </form>
 
-    <div class="w-full flex-col mx-auto bg-white p-4 rounded shadow">
-      <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
-        class="mb-4 w-full p-2 border border-pos_bla/25 rounded outline-none">
+  <div class="w-full flex-col mx-auto bg-white p-4 rounded shadow">
+    <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
+      class="mb-4 w-full p-2 border border-pos_bla/25 rounded outline-none">
 
-      <div class="flex flex-col gap-0.5">
-        <h2 class="text-pos_bla text-3xl font-bold">Orders List</h2>
+    <div class="flex flex-col gap-0.5">
+      <h2 class="text-pos_col text-3xl font-bold">Tables List</h2>
 
-        <div class="overflow-x-auto">
-          <table class="w-full divide-y divide-pos_bla rounded-3xl">
-            <thead class="bg-pos_bla">
-              <tr class="text-xl text-pos_whi font-bold">
-                <th class="px-4 py-2 text-left cursor-pointer">Name</th>
-                <th class="px-4 py-2 text-left cursor-pointer">Type</th>
-                <th class="px-4 py-2 text-left cursor-pointer">Status</th>
-                <th class="px-4 py-2 text-left cursor-pointer">Order Items</th>
-                <th class="px-4 py-2 text-left cursor-pointer">Total Amount</th>
-              </tr>
-            </thead>
-            <tbody id="orders" class="divide-y divide-gray-200">
-              {{ range .orders }}
-              {{ template "order_row" . }}
-              {{ end }}
-            </tbody>
-          </table>
-        </div>
+      <div class="overflow-x-auto">
+        <table class="w-full divide-y divide-pos_col rounded-3xl">
+          <thead class="bg-pos_col">
+            <tr class="text-xl text-pos_whi font-bold">
+              <th class="px-4 py-2 text-left cursor-pointer">Name</th>
+              <th class="px-4 py-2 text-left cursor-pointer">Capacity</th>
+              <th class="px-4 py-2 text-left cursor-pointer">State</th>
+            </tr>
+          </thead>
+          <tbody id="tables" class="divide-y divide-gray-200">
+            {{ range .tables }}
+            {{ template "table_row" . }}
+            {{ end }}
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
-  <div class="w-full flex flex-col gap-5">
-    <form hx-post="/tables" hx-target="#tables" hx-swap="beforeend"
-      class="mb-3 space-y-2 flex gap-2.5 items-center justify-between flex-nowrap">
-      <input type="text" name="table-name" placeholder="Enter table name" class="border px-5 py-3 rounded-md" required>
-      <select name="state" id="state" class="border px-5 py-3 rounded-md">
-        <option value="Available">Available</option>
-        <option value="Occupied" selected>Occupied</option>
-        <option value="Pending">Pending</option>
-      </select>
-      <input type="number" name="capacity" placeholder="Enter number of seats" class="border px-5 py-3 rounded-md"
-        required>
-      <button type="submit" class="p-3.5 text-pos_whi px-5 py-3 rounded-md bg-pos_col">Add&nbsp;Table</button>
-    </form>
-
-    <div class="w-full flex-col mx-auto bg-white p-4 rounded shadow">
-      <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
-        class="mb-4 w-full p-2 border border-pos_bla/25 rounded outline-none">
-
-      <div class="flex flex-col gap-0.5">
-        <h2 class="text-pos_col text-3xl font-bold">Tables List</h2>
-
-        <div class="overflow-x-auto">
-          <table class="w-full divide-y divide-pos_col rounded-3xl">
-            <thead class="bg-pos_col">
-              <tr class="text-xl text-pos_whi font-bold">
-                <th class="px-4 py-2 text-left cursor-pointer">Name</th>
-                <th class="px-4 py-2 text-left cursor-pointer">Capacity</th>
-                <th class="px-4 py-2 text-left cursor-pointer">State</th>
-              </tr>
-            </thead>
-            <tbody id="tables" class="divide-y divide-gray-200">
-              {{ range .tables }}
-              {{ template "table_row" . }}
-              {{ end }}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 </div>

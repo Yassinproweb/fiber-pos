@@ -40,5 +40,11 @@ func FetchOrders() []Order {
 		{"#ORD0016", Delivery, Delivered, "13", "123.84", "Brian", "0700678111", "Kitende, Entebbe", "11-06-2025 14:30"},
 		{"#ORD0017", Takeaway, Ready, "2", "13.75", "Rugaaju", "0755673337", "Mbarara Branch", "11-06-2025 15:30"},
 		{"#ORD0018", DineIn, Preparing, "3", "23.05", "Okolot", "0779508837", "#TBL003", "11-06-2025 16:30"},
+		{"#ORD0019", DineIn, Canceled, "7", "22.00", "Farīdah", "0762678030", "#TBL007", "11-06-2025 11:30"},
+		{"#ORD0020", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
+		{"#ORD0021", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
+		{"#ORD0022", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
+		{"#ORD0023", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
+		{"#ORD0024", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
 	}
 }

@@ -1,0 +1,20 @@
+<div
+  class="w-full aspect-[16/10] items-center justify-center border-2 border-pos_lgh/10 rounded-2xl overflow-clip bg-pos_whi">
+  <div class="w-4/5 flex-col items-center justify-center gap-1.5 p-3">
+    <img src="{{ .Image }}" alt="product image" select="none"
+      class="w-full aspect-square object-center object-cover rounded-lg">
+    <div class="w-full flex-col gap-0">
+      <p class="text-lg text-pos_col font-black"><sup class="text-xs">Ugx</sup> {{ .Price }} <span
+          class="text-base text-pos_lgh font-semibold"><br>/ Meal</span></p>
+    </div>
+  </div>
+  <div class="w-full h-full flex-col items-start justify-between gap-1.5 p-3">
+    <h4 class="text-lg text-pos_bla font-black">{{ .Name }}</h4>
+    <p class="text-sm text-pos_lgh font-medium">{{ .Description }}</p>
+    <div class="text-3xl w-full flex items-center justify-between p-1 rounded-full bg-gray-100">
+      <button class="w-10 aspect-square rounded-full text-pos_col bg-pos_whi">-</button>
+      <span class="text-pos_bla text-base font-medium">0</span>
+      <button class="w-10 aspect-square rounded-full text-pos_whi bg-pos_col">+</button>
+    </div>
+  </div>
+</div>

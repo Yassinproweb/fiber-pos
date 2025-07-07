@@ -1,39 +1,52 @@
-let orderStatus = document.getElementById('status');
-let scolor = document.querySelectorAll('.scolor');
-let sback = document.querySelector('.sback');
+document.addEventListener("DOMContentLoaded", () => {
+  const statusColors = {
+    placed: { text: "text-pos_plc", bg: "bg-pos_plc" },
+    transit: { text: "text-pos_trs", bg: "bg-pos_trs" },
+    ready: { text: "text-pos_rdy", bg: "bg-pos_rdy" },
+    preparing: { text: "text-pos_pdg", bg: "bg-pos_pdg" },
+    canceled: { text: "text-pos_cld", bg: "bg-pos_cld" },
+    taken: { text: "text-pos_dlv", bg: "bg-pos_dlv" },
+    served: { text: "text-pos_dlv", bg: "bg-pos_dlv" },
+    delivered: { text: "text-pos_dlv", bg: "bg-pos_dlv" },
+  };
 
-function themeOrder() {
-  if (orderStatus.innerText === " Placed") {
-    sback.textContent = "bg-pos_plc";
-    scolor.forEach(color => {
-      color.textContent = "text-pos_plc";
-    });
-  } else if (orderStatus.innerText === " Canceled") {
-    sback.textContent = "bg-pos_cld";
-    scolor.forEach(color => {
-      color.textContent = "text-pos_cld";
-    });
-  } else if (orderStatus.innerText === " Ready") {
-    sback.textContent = "bg-pos_rdy";
-    scolor.forEach(color => {
-      color.textContent = "text-pos_rdy";
-    });
-  } else if (orderStatus.innerText === " Preparing") {
-    sback.textContent = "bg-pos_pdg";
-    scolor.forEach(color => {
-      color.textContent = "text-pos_pdg";
-    });
-  } else if (orderStatus.innerText === " Transit") {
-    sback.textContent = "bg-pos_trs";
-    scolor.forEach(color => {
-      color.textContent = "text-pos_trs";
-    });
-  } else {
-    sback.textContent = "bg-pos_dlv";
-    scolor.forEach(color => {
-      color.textContent = "text-pos_dlv";
-    });
-  }
-}
+  document.querySelectorAll(".status").forEach((statusSpan) => {
+    const status = statusSpan.textContent.trim().toLowerCase();
+    const color = statusColors[status];
+    if (!color) return;
 
-window.addEventListener("DOMContentLoaded", themeOrder());
+    const card = statusSpan.closest(".snap-center");
+    if (!card) return;
+
+    // Apply color to .status
+    statusSpan.classList.add(color.text);
+
+    // Apply color to all .scolor elements inside the same card
+    card.querySelectorAll(".scolor").forEach((el) => {
+      el.classList.add(color.text);
+    });
+
+    // Apply bg to .sback inside the card
+    card.querySelectorAll(".sback").forEach((el) => {
+      el.classList.add(color.bg);
+    });
+  });
+
+  const typeIcons = {
+    takeaway: "ph-package",
+    dinein: "ph-fork-knife",
+    delivery: "ph-person-simple-bike",
+  };
+
+  document.querySelectorAll(".snap-center").forEach((card) => {
+    const typeSpan = card.querySelector(".otype");
+    if (!typeSpan) return;
+
+    const type = typeSpan.textContent.trim().toLowerCase();
+    const iconClass = typeIcons[type];
+    if (!iconClass) return;
+
+    const icon = card.querySelector(".otype-icon");
+    if (icon) icon.classList.add(iconClass);
+  });
+});

@@ -554,6 +554,10 @@ video {
   display: none;
 }
 
+.invisible {
+  visibility: hidden;
+}
+
 .absolute {
   position: absolute;
 }
@@ -599,6 +603,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .aspect-\[16\/10\] {
   aspect-ratio: 16/10;
 }
@@ -634,6 +642,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.max-h-0 {
+  max-height: 0px;
 }
 
 .max-h-\[100\%\] {
@@ -703,6 +715,10 @@ video {
 
 .w-screen {
   width: 100vw;
+}
+
+.max-w-0 {
+  max-width: 0px;
 }
 
 .cursor-pointer {
@@ -943,7 +959,7 @@ video {
 
 .border-pos_rdy {
   --tw-border-opacity: 1;
-  border-color: hsl(51 93% 45% / var(--tw-border-opacity, 1));
+  border-color: hsl(41 93% 45% / var(--tw-border-opacity, 1));
 }
 
 .border-b-pos_bla\/10 {
@@ -976,9 +992,19 @@ video {
   background-color: hsl(205 1% 07% / 0.1);
 }
 
+.bg-pos_cld {
+  --tw-bg-opacity: 1;
+  background-color: hsl(357 95% 50% / var(--tw-bg-opacity, 1));
+}
+
 .bg-pos_col {
   --tw-bg-opacity: 1;
   background-color: hsl(195 97% 49% / var(--tw-bg-opacity, 1));
+}
+
+.bg-pos_dlv {
+  --tw-bg-opacity: 1;
+  background-color: hsl(141 89% 43% / var(--tw-bg-opacity, 1));
 }
 
 .bg-pos_lgh {
@@ -992,6 +1018,26 @@ video {
 
 .bg-pos_lgh\/15 {
   background-color: hsl(195 1% 57% / 0.15);
+}
+
+.bg-pos_pdg {
+  --tw-bg-opacity: 1;
+  background-color: hsl(277 81% 57% / var(--tw-bg-opacity, 1));
+}
+
+.bg-pos_plc {
+  --tw-bg-opacity: 1;
+  background-color: hsl(217 99% 56% / var(--tw-bg-opacity, 1));
+}
+
+.bg-pos_rdy {
+  --tw-bg-opacity: 1;
+  background-color: hsl(41 93% 45% / var(--tw-bg-opacity, 1));
+}
+
+.bg-pos_trs {
+  --tw-bg-opacity: 1;
+  background-color: hsl(81 97% 41% / var(--tw-bg-opacity, 1));
 }
 
 .bg-pos_whi {
@@ -1180,6 +1226,11 @@ video {
   color: hsl(195 1% 57% / var(--tw-text-opacity, 1));
 }
 
+.text-pos_pdg {
+  --tw-text-opacity: 1;
+  color: hsl(277 81% 57% / var(--tw-text-opacity, 1));
+}
+
 .text-pos_plc {
   --tw-text-opacity: 1;
   color: hsl(217 99% 56% / var(--tw-text-opacity, 1));
@@ -1187,12 +1238,12 @@ video {
 
 .text-pos_rdy {
   --tw-text-opacity: 1;
-  color: hsl(51 93% 45% / var(--tw-text-opacity, 1));
+  color: hsl(41 93% 45% / var(--tw-text-opacity, 1));
 }
 
 .text-pos_trs {
   --tw-text-opacity: 1;
-  color: hsl(81 97% 45% / var(--tw-text-opacity, 1));
+  color: hsl(81 97% 41% / var(--tw-text-opacity, 1));
 }
 
 .text-pos_whi {

@@ -108,5 +108,5 @@ func main() {
 	})
 
 	fmt.Println("Server is running on port 5174")
-	router.Listen(":5177")
+	router.Listen(":5174")
 }

@@ -13,10 +13,10 @@ module.exports = {
 
         pos_plc: 'hsl(217, 99%, 56%)',
         pos_cld: 'hsl(357, 95%, 50%)',
-        pos_trs: 'hsl(81, 97%, 45%)',
-        pos_dlv: 'hsl(141, 89%, 43%)',
+        pos_trs: 'hsl(81, 97%, 41%)',
+        pos_dlv: 'hsl(141, 93%, 37%)',
         pos_pdg: 'hsl(277, 81%, 57%)',
-        pos_rdy: 'hsl(51, 93%, 45%)',
+        pos_rdy: 'hsl(41, 93%, 45%)',
       }
     },
   },

@@ -3,18 +3,18 @@
   <div class="w-full h-fit items-center justify-between p-2 border-b-2 border-b-pos_bla/10">
     <div class="w-fit flex-col gap-0 items-start justify-center">
       <h4 class="text-sm text-pos_bla font-bold">{{ .CustName }} - {{ .CustNumber}}</h4>
-      <p class="text-sm scolor font-black">{{ .Name }} - {{ .Type }}</p>
+      <p class="text-sm scolor font-black">{{ .Name }} - <span class="otype">{{ .Type }}</span></p>
     </div>
     <div class="w-fit items-center justify-end">
       <span class="text-pos_whi text-2xl w-12 aspect-square flex items-center justify-center rounded-full sback">
-        <i class="ph ph-person-simple-bike"></i>
+        <i class="ph otype-icon sback"></i>
       </span>
     </div>
   </div>
   <div class="w-full flex-col items-start justify-center gap-1.5 p-2.5 font-medium">
     <span class="w-full flex items-center justify-start gap-2">
       <i class="ph ph-map-pin-area text-xl scolor leading-none"></i>
-      <span class="text-[13px] text-pos_bla font-medium">{{ .Destination }} -<span id="status"> {{ .Status }}
+      <span class="text-[13px] text-pos_bla font-medium">{{ .Destination }} - <span class="status">{{ .Status }}
         </span></span>
     </span>
     <span class="w-full flex items-center justify-start gap-2">
@@ -22,7 +22,7 @@
       <span class="text-[13px] text-pos_bla font-medium">Items: {{ .Items }} - Total Price: ${{ .Cost }}</span>
     </span>
     <span class="w-full flex items-center justify-start gap-2">
-      <i class="ph ph-clock-afternoon text-xl scolor leading-none"></i>
+      <i class="ph ph-watch text-xl scolor leading-none"></i>
       <span class="text-[13px] text-pos_bla font-medium">{{ .DateTime }}</span>
     </span>
   </div>

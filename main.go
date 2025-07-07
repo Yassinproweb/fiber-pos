@@ -19,11 +19,13 @@ func main() {
 
 	router.Get("/", func(c *fiber.Ctx) error {
 		orders := models.FetchOrders()
-		// tables := models.FetchTables()
+		tables := models.FetchTables()
+		products := models.FetchProducts()
 
 		return c.Render("index", fiber.Map{
-			"orders": orders,
-			// "tables": tables,
+			"orders":   orders,
+			"tables":   tables,
+			"products": products,
 		})
 	})
 
@@ -61,6 +63,28 @@ func main() {
 			"CustNumber":  custNumber,
 			"Destination": destination,
 			"DateTime":    datetime,
+		})
+	})
+
+	router.Post("/products", func(c *fiber.Ctx) error {
+		productName := c.FormValue("product-name")
+		productDesc := c.FormValue("product-desc")
+		productPrice := c.FormValue("product-price")
+		productImg := c.FormValue("product-img")
+
+		product := models.Product{
+			Name:        productName,
+			Description: productDesc,
+			Price:       productPrice,
+			Image:       productImg,
+		}
+
+		fmt.Println(product)
+		return c.Render("partials/product_card", fiber.Map{
+			"Name":        productName,
+			"Description": productDesc,
+			"Price":       productPrice,
+			"Image":       productImg,
 		})
 	})
 

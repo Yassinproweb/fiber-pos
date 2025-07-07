@@ -994,11 +994,6 @@ video {
   background-color: hsl(195 1% 57% / 0.15);
 }
 
-.bg-pos_rdy {
-  --tw-bg-opacity: 1;
-  background-color: hsl(51 93% 45% / var(--tw-bg-opacity, 1));
-}
-
 .bg-pos_whi {
   --tw-bg-opacity: 1;
   background-color: hsl(205 1% 100% / var(--tw-bg-opacity, 1));

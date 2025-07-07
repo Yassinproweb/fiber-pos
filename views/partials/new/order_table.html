@@ -1,0 +1,25 @@
+<form hx-post="/orders" hx-target="#orders" hx-swap="beforeend"
+  class="mb-3 space-y-2 flex gap-2.5 items-center justify-between flex-nowrap">
+  <input type="text" name="order-name" placeholder="Enter order name" class="border px-5 py-3 rounded-md" required>
+  <input type="text" name="cust-name" placeholder="Enter customer name" class="border px-5 py-3 rounded-md" required>
+  <input type="tel" name="cust-number" placeholder="Enter customer number" class="border px-5 py-3 rounded-md" required>
+  <select name="type" id="type" class="border px-5 py-3 rounded-md">
+    <option value="Takeaway">Takeaway</option>
+    <option value="DineIn" selected>DineIn</option>
+    <option value="Delivery">Delivery</option>
+  </select>
+  <select name="status" id="status" class="border px-5 py-3 rounded-md">
+    <option value="Placed" selected>Placed</option>
+    <option value="Preparing">Preparing</option>
+    <option value="Canceled">Canceled</option>
+    <option value="Ready">Ready</option>
+    <option value="Delivered">Delivered</option>
+    <option value="Taken">Taken</option>
+    <option value="Served">Served</option>
+  </select>
+  <input type="number" name="items" placeholder="Enter number of items" class="border px-5 py-3 rounded-md" required>
+  <input type="text" name="cost" placeholder="Enter total cost" class="border px-5 py-3 rounded-md" required>
+  <input type="text" name="destination" placeholder="Select destination" class="border px-5 py-3 rounded-md" required>
+  <input type="datetime" name="datetime" placeholder="Select date & time" class="border px-5 py-3 rounded-md" required>
+  <button type="submit" class="p-3.5 text-pos_whi px-5 py-3 rounded-md bg-pos_col">Add&nbsp;Order</button>
+</form>

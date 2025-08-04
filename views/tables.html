@@ -1,0 +1,42 @@
+{{ template "partials/head" .}}
+<div class="w-[85%] h-full flex flex-col gap-12">
+  <div class="w-full h-full flex-col mx-auto bg-white p-4 rounded shadow">
+    <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
+      class="mb-4 w-full p-2 border border-pos_bla/25 rounded outline-none">
+
+    <div class="w-full h-[93%] flex flex-col gap-0.5">
+      <h2 class="text-pos_bla text-3xl font-bold mb-3">Tables List</h2>
+
+      <div class="w-full max-h-[93%] overflow-y-scroll">
+        {{ range .tabless }}
+        {{ template "partials/table_row" . }}
+        {{ end }}
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const statusColors = {
+        available: "text-pos_plc",
+        pending: "text-pos_pdg",
+        occupied: "text-pos_dlv",
+      };
+
+      document.querySelectorAll("#tables tr").forEach((row) => {
+        const statusEl = row.querySelector(".status");
+        if (!statusEl) return;
+
+        const status = statusEl.textContent.trim().toLowerCase();
+        const textClass = statusColors[status];
+        if (!textClass) return;
+
+        statusEl.classList.add(textClass);
+
+        row.querySelectorAll(".scolor").forEach((el) => {
+          el.classList.add(textClass);
+        });
+      });
+    });
+
+  </script>
+  {{ template "partials/foot" .}}

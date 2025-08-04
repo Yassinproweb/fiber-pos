@@ -1,20 +1,4 @@
 {{ template "partials/head" .}}
-<!---->
-<!-- <div class="hidden invisible max-h-0 max-w-0"> -->
-<!--   <span class="bg-pos_plc"></span> -->
-<!--   <span class="bg-pos_pdg"></span> -->
-<!--   <span class="bg-pos_cld"></span> -->
-<!--   <span class="bg-pos_rdy"></span> -->
-<!--   <span class="bg-pos_trs"></span> -->
-<!--   <span class="bg-pos_dlv"></span> -->
-<!--   <span class="text-pos_plc"></span> -->
-<!--   <span class="text-pos_pdg"></span> -->
-<!--   <span class="text-pos_cld"></span> -->
-<!--   <span class="text-pos_rdy"></span> -->
-<!--   <span class="text-pos_trs"></span> -->
-<!--   <span class="text-pos_dlv"></span> -->
-<!-- </div> -->
-
 <div class="w-[85%] h-full flex flex-col gap-12">
   <div class="w-full h-full flex-col mx-auto bg-white p-4 rounded shadow">
     <input type="search" id="searchInput" onkeyup="searchTable()" placeholder="Search..."
@@ -40,7 +24,7 @@
           </thead>
           <tbody id="orders" class="divide-y divide-gray-200">
             {{ range .orders }}
-            {{ template "order_row" . }}
+            {{ template "partials/order_row" . }}
             {{ end }}
           </tbody>
         </table>

@@ -9,15 +9,19 @@ const (
 )
 
 type Table struct {
-	Name     string
-	Capacity string
-	State    State
+	Name      string
+	Capacity  int
+	State     State
+	OrderCurr *Order
 }
 
 func FetchTables() []Table {
 	return []Table{
-		{"#TBL007", "4", Available},
-		{"#TBL013", "8", Occupied},
-		{"#TBL009", "12", Pending},
+		{
+			Name:      "#TBR007",
+			Capacity:  4,
+			State:     Available,
+			OrderCurr: nil,
+		},
 	}
 }

@@ -1,5 +1,9 @@
 package models
 
+import (
+	"fmt"
+)
+
 type Type string
 type Status string
 
@@ -18,33 +22,80 @@ const (
 	Served    Status = "Served"
 )
 
+type OrderItem struct {
+	PdtName   string
+	Quantity  int
+	UnitPrice float64
+}
+
 type Order struct {
 	Name        string
 	Type        Type
 	Status      Status
-	Items       string
-	Cost        string
+	Items       int
+	Cost        float64
 	CustName    string
 	CustNumber  string
 	Destination string
 	DateTime    string
+	OrderCart   []OrderItem
+}
+
+func (o *Order) UpdateItemsAndCost() error {
+	totalItems := 0
+	totalCost := 0.0
+
+	products := FetchProducts()
+	productMap := make(map[string]Product)
+	for _, p := range products {
+		productMap[p.Name] = p
+	}
+
+	for _, item := range o.OrderCart {
+		if item.Quantity < 0 {
+			return fmt.Errorf("invalid quantity for product %s: quantity (%d) cannot be negative", item.PdtName, item.Quantity)
+		}
+		pdt, exists := productMap[item.PdtName]
+		if !exists {
+			return fmt.Errorf("product name %s not found in product list", item.PdtName)
+		}
+		if item.UnitPrice <= 0 {
+			item.UnitPrice = pdt.Price
+		}
+		if item.UnitPrice < 0 {
+			return fmt.Errorf("invalid unit price for product %s: unit price (%f) cannot be negative", item.PdtName, item.UnitPrice)
+		}
+		totalItems += item.Quantity
+		totalCost += float64(item.Quantity) * item.UnitPrice
+	}
+
+	if totalItems < 0 {
+		return fmt.Errorf("total items (%d) cannot be negative", totalItems)
+	}
+	if totalCost < 0 {
+		return fmt.Errorf("total cost (%f) cannot be negative", totalCost)
+	}
+
+	o.Items = totalItems
+	o.Cost = totalCost
+	return nil
 }
 
 func FetchOrders() []Order {
 	return []Order{
-		{"#ORD0011", DineIn, Placed, "2", "7.33", "Ahmad", "0722678837", "Nakasozi, Wakiso", "11-06-2025 09:30"},
-		{"#ORD0012", Takeaway, Taken, "1", "3.85", "Kasagga", "0767883721", "Kampala Branch", "11-06-2025 10:30"},
-		{"#ORD0013", DineIn, Canceled, "7", "22.00", "Farīdah", "0762678030", "#TBL007", "11-06-2025 11:30"},
-		{"#ORD0014", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
-		{"#ORD0015", DineIn, Served, "5", "33.5", "Sharīfah", "0742990939", "#TBL011", "11-06-2025 13:30"},
-		{"#ORD0016", Delivery, Delivered, "13", "123.84", "Brian", "0700678111", "Kitende, Entebbe", "11-06-2025 14:30"},
-		{"#ORD0017", Takeaway, Ready, "2", "13.75", "Rugaaju", "0755673337", "Mbarara Branch", "11-06-2025 15:30"},
-		{"#ORD0018", DineIn, Preparing, "3", "23.05", "Okolot", "0779508837", "#TBL003", "11-06-2025 16:30"},
-		{"#ORD0019", DineIn, Canceled, "7", "22.00", "Farīdah", "0762678030", "#TBL007", "11-06-2025 11:30"},
-		{"#ORD0020", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
-		{"#ORD0021", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
-		{"#ORD0022", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
-		{"#ORD0023", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
-		{"#ORD0024", Delivery, Transit, "8", "102.79", "Josephine", "0727658937", "Wakaliga, Lubaga", "11-06-2025 12:30"},
+		{
+			"#ORD0011",
+			DineIn,
+			Placed,
+			2,
+			7.33,
+			"Ahmad",
+			"0722678837",
+			"Nakasozi, Wakiso",
+			"11-06-2025 09:30",
+			[]OrderItem{
+				{"Posho & Beans", 3, 19.77},
+			},
+		},
 	}
 }

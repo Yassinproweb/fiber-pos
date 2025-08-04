@@ -1023,6 +1023,10 @@ video {
   background-color: hsl(195 97% 49% / var(--tw-bg-opacity, 1));
 }
 
+.bg-pos_col\/10 {
+  background-color: hsl(195 97% 49% / 0.1);
+}
+
 .bg-pos_dlv {
   --tw-bg-opacity: 1;
   background-color: hsl(141 93% 37% / var(--tw-bg-opacity, 1));

@@ -19,7 +19,7 @@ func FetchTables() []Table {
 	return []Table{
 		{
 			Name:      "#TBR007",
-			Capacity:  4,
+			Capacity:  6,
 			State:     Available,
 			OrderCurr: nil,
 		},

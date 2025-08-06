@@ -34,12 +34,12 @@ func main() {
 
 	router.Get("/", func(c *fiber.Ctx) error {
 		orders := models.FetchOrders()
-		// tables := models.FetchTables()
+		tables := models.FetchTables()
 		products := models.FetchProducts()
 
 		return c.Render("index", fiber.Map{
-			"orders": orders,
-			// "tables":   tables,
+			"orders":   orders,
+			"tables":   tables,
 			"products": products,
 		})
 	})

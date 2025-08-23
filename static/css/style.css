@@ -578,10 +578,6 @@ video {
   top: 0px;
 }
 
-.left-3\.5 {
-  left: 0.875rem;
-}
-
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -788,10 +784,6 @@ video {
 
 .grid-cols-3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.grid-cols-4 {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-rows-2 {
@@ -1055,10 +1047,6 @@ video {
   background-color: hsl(195 97% 49% / 0.1);
 }
 
-.bg-pos_col\/15 {
-  background-color: hsl(195 97% 49% / 0.15);
-}
-
 .bg-pos_col\/35 {
   background-color: hsl(195 97% 49% / 0.35);
 }
@@ -1188,11 +1176,6 @@ video {
   padding-bottom: 0.875rem;
 }
 
-.py-2\.5 {
-  padding-top: 0.625rem;
-  padding-bottom: 0.625rem;
-}
-
 .pb-11 {
   padding-bottom: 2.75rem;
 }
@@ -1223,6 +1206,11 @@ video {
   line-height: 2.25rem;
 }
 
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 .text-\[13px\] {
   font-size: 13px;
 }
@@ -1250,11 +1238,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
 }
 
 .font-black {
@@ -1355,7 +1338,6 @@ video {
   margin: 0;
   box-sizing: border-box;
   transition: all 375ms ease-in-out;
-  font-family: "Reddit Sans";
   font-family: "Bricolage Grotesque";
 }
 
